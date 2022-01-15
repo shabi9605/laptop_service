@@ -1,0 +1,196 @@
+
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Modern an Admin Panel Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+
+
+
+<link href="/static/css2/style.css" rel='stylesheet' type='text/css'/>
+	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet">
+	<link href="/static/css2/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Accessible Profile Widget Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+			<script src="/static/js2/jquery.min.js"></script>
+			<script>$(document).ready(function(c) {
+			$('.alert-close').on('click', function(c){
+				$('.main-agile').fadeOut('slow', function(c){
+					$('.main-agile').remove();
+				});
+			});	  
+		});
+		</script>
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Modern Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+ <!-- Bootstrap Core CSS -->
+<link href="/static/css1/bootstrap.min.css" rel='stylesheet' type='text/css' />
+<!-- Custom CSS -->
+<link href="/static/css1/style.css" rel='stylesheet' type='text/css' />
+<!-- Graph CSS -->
+<link href="/static/css1/lines.css" rel='stylesheet' type='text/css' />
+<link href="/static/css1/font-awesome.css" rel="stylesheet"> 
+<!-- jQuery -->
+<script src="/static/js1/jquery.min.js"></script>
+<!----webfonts--->
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<!---//webfonts--->  
+<!-- Nav CSS -->
+<link href="/static/css1/custom.css" rel="stylesheet">
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/static/js1/metisMenu.min.js"></script>
+<script src="/static/js1/custom.js"></script>
+<!-- Graph JavaScript -->
+<script src="/static/js1/d3.v3.js"></script>
+<script src="/static/js1/rickshaw.js"></script>
+</head>
+<body>
+<div id="wrapper">
+     <!-- Navigation -->
+        <nav class="top1 navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Modern</a>
+            </div>
+            <!-- /.navbar-header -->
+            <ul class="nav navbar-nav navbar-right">
+				
+			    <li class="dropdown">
+	        		<a href="#" class="dropdown-toggle avatar" data-toggle="dropdown"><img src="/static/images1/1.png"><span class="badge">9</span></a>
+	        		<ul class="dropdown-menu">
+						
+						<li class="dropdown-menu-header text-center">
+							<strong>Settings</strong>
+						</li>
+						
+						<li class="m_2"><a href="#"><i class="fa fa-lock"></i> Logout</a></li>	
+	        		</ul>
+	      		</li>
+			</ul>
+			<form class="navbar-form navbar-right">
+              <input type="text" class="form-control" value="Search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search...';}">
+            </form>
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+
+                        <li>
+                            <a href="{% url 'index' %}"><i class="fa fa-dashboard fa-fw nav_icon"></i>Home</a>
+                        </li>
+
+
+                        <li>
+                            <a href="{% url 'dashboard' %}"><i class="fa fa-dashboard fa-fw nav_icon"></i>Dashboard</a>
+                        </li>
+                        
+                        
+                        {% if user.register.user_type == 'customer' %}
+
+                        <li>
+                            <a href="{% url 'booking' %}"><i class="fa fa-flask nav_icon"></i>BOOKING</a>
+                        </li>
+
+                        <li>
+                            <a href="{% url 'category' %}"><i class="fa fa-flask nav_icon"></i>VIEW CATEGORY OF GARBAGE</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'product' %}"><i class="fa fa-flask nav_icon"></i>VIEW PRODUCTS</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'cart:cart_detail' %}"><i class="fa fa-flask nav_icon"></i>VIEW CART</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'orders:neworder' %}"><i class="fa fa-flask nav_icon"></i>VIEW ORDERS</a>
+                        </li>
+
+                        {% endif %}
+                        {% if user.register.category.staff_category == 'collection_staff' %}
+
+                        <li>
+                            <a href="{% url 'allotted_works' %}"><i class="fa fa-flask nav_icon"></i>VIEW ALLOTTED WORKS</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'booking' %}"><i class="fa fa-flask nav_icon"></i>VIEW BOOKING</a>
+                        </li>
+
+
+                        {% endif %}
+
+                        {% if user.register.category.staff_category == 'delivery_staff' %}
+
+                        <li>
+                            <a href="{% url 'allotted_works' %}"><i class="fa fa-flask nav_icon"></i>VIEW ALLOTTED WORKS</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'orders:orderview' %}"><i class="fa fa-flask nav_icon"></i>VIEW ALL ORDERS</a>
+                        </li>
+
+
+                        {% endif %}
+
+                        <li>
+                            <a href="{% url 'logoutnow' %}"><i class="fa fa-flask nav_icon"></i>LOGOUT</a>
+                        </li>
+                         
+                       
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+        <div id="page-wrapper" style="background-color: aquamarine;">{% block title %} | payment {% endblock %} {% load crispy_forms_tags %}{% block content %}
+<h1>Payment
+
+</h1>
+{% for msg in messages %}{{msg}}{% endfor %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container" style="width: 40%; background-color: #bf3434;border-radius: 5px; padding: 30px;font-size: 1.1em;color: white;">
+         User name: {{user.username}}<br>
+         Amount:{{amount}}<br><br>
+        <input type="submit" value="PAY" style="background-color: mediumblue;">
+        {% if r == 2 %}
+        <h1>not</h1>
+        {% endif %}
+    </form>
+
+<br /> {% if payment %}
+<form action="{% url 'payment:payment-status' %}" method="POST" style="color: mediumblue;">
+    {% csrf_token %}
+    <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_48Z9LMTDVAN5JU" data-amount="{{ amount }}" data-currency="{{ payment.currency }}" data-order_id="{{payment.id}}" data-buttontext="Pay with Razorpay" data-name="Ideal City"
+        data-description="Buy and Sell easy" data-image="https://example.com/your_logo.jpg" data-prefill.name="{{ payment.name }}" data-prefill.email="you@example.com" data-theme.color="#F37254" ></script>
+    <input type="hidden" custom="Hidden Element" name="hidden" >
+</form>{% endif %}
+
+</div>{% endblock %}
+  	
+</div>
+      
+
+</body>
+</html>

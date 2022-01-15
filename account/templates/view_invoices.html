@@ -1,0 +1,56 @@
+
+
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+
+
+<div class="table-responsive table-shadow" style="background-color: bisque;">
+    
+    {% if invoices %}
+    <table class="table">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">User</th>
+              
+              <th scope="col">District</th>
+              <th scope="col">City</th>
+              <th scope="col">Pin</th>
+              <th scope="col">Price</th>
+              <th scope="col">Invoice Date</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for i in invoices %}
+            <tr style="background-color: #d9a3a3;">
+
+              <td>{{ i.booking.user.username}}</td>
+           
+              <td>{{i.booking.district}}</td>
+              <td>{{i.booking.city}}</td>
+              <td>{{i.booking.pin}}</td>
+              <td>{{i.booking.price}}</td>
+              
+              <td>{{ i.invoice_date }}</td>
+
+             
+            </tr>
+
+            {% endfor %}
+
+          </tbody>
+
+    </table>
+    {% else %}
+
+    <span>No Leaves can be found...</span>
+    {% endif %}
+
+</div>
+<!-- /TABLE -->
+
+
+
+{% endblock %}

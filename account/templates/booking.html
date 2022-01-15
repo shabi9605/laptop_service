@@ -1,0 +1,66 @@
+{% extends 'dashboard.html' %}
+
+{% block content %}
+
+
+
+<div class="table-responsive table-shadow" style="background-color: bisque;">
+    
+    {% if booking %}
+    <table class="table">
+          <thead>
+            <tr>
+              <!-- <th scope="col">#</th> -->
+              <th scope="col">User</th>
+              <th scope="col">Complaint</th>
+              <th scope="col">Wanted Date</th>
+              <th scope="col">Country</th>
+              <th scope="col">State</th>
+              <th scope="col">District</th>
+              <th scope="col">City</th>
+              <th scope="col">Pin</th>
+              <th scope="col">Status</th>
+              <th scope="col">Submitted Date</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for i in booking %}
+            <tr style="background-color: #d9a3a3;">
+
+              <td>{{ i.user.username}}</td>
+              <td>{{ i.complaint }}</td>
+              <td>{{ i.wanted_date}}</td>
+              <td>{{ i.country }}</td>
+              <td>{{i.state}}</td>
+              <td>{{i.district}}</td>
+              <td>{{i.city}}</td>
+              <td>{{i.pin}}</td>
+              {% if i.status == 'accepted' %}
+              <td style="color: green;font-weight: bold;">Accepted</td>
+              {% elif i.status == 'pending' %}
+              <td style="color: rgb(239 255 0);font-weight: bold;">Pending</td>
+              {% else %}
+              <td style="color: rgb(255, 10, 10);font-weight: bold;">Rejected</td>
+              {% endif %}
+              
+              <td>{{ i.date }}</td>
+
+             
+            </tr>
+
+            {% endfor %}
+
+          </tbody>
+
+    </table>
+    {% else %}
+
+    <span>No Leaves can be found...</span>
+    {% endif %}
+
+</div>
+<!-- /TABLE -->
+
+
+
+{% endblock %}

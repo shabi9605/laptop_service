@@ -1,0 +1,35 @@
+{% extends 'dashboard.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+{% if user.register %}
+
+<h2>Rating Form</h2>
+<form action="" method="POST" style="color: white;">
+    {% csrf_token %}
+    {{form|crispy}}
+    
+    
+    <input type="submit" value="ADD" style="background-color: #3e36c3;color: white;margin-top: 1em;">
+
+</form>
+{% endif %}
+
+
+<div style="background-color: burlywood;padding: 1em;margin-top: 1em;">
+  
+
+{% for i in ratings %}
+
+<div class="card" style="background-color: cadetblue;margin-top: 1em;padding: 1em;">
+    <div class="card-body">
+      <span style="font-size: 1.4em;color: crimson;font-weight: bold;"> User:</span><span style="font-size: 1.2em;color: white;font-weight: bold;"> {{i.user.username}}</span><br>
+      <span style="font-size: 1.4em;color: crimson;font-weight: bold;"> rating:</span><span style="font-size: 1.2em;color: white;font-weight: bold;"> {{i.rating}} <span style="color: yellow;"><i class="fa fa-star" aria-hidden="true"></i></span></span>
+    </div>
+  </div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

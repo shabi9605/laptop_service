@@ -1,0 +1,17 @@
+{% extends 'dashboard.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<h2>Complaint Form</h2>
+<form action="" method="POST" style="color: white;">
+    {% csrf_token %}
+    {{form|crispy}}
+    
+    
+    <input type="submit" value="SEND" style="background-color: #3e36c3;color: white;margin-top: 1em;">
+
+</form>
+
+{% endblock %}

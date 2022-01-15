@@ -1,0 +1,18 @@
+{% extends 'dashboard.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+    <form action="" method="POST" style="color: rgb(233, 0, 0);">
+        {% csrf_token %}
+        {{form|crispy}}
+        
+        
+        <input type="submit" value="MAKE" style="background-color: #3e36c3;color: white;margin-top: 1em;">
+    
+    </form>
+
+
+
+{% endblock %}

@@ -1,0 +1,513 @@
+
+<!DOCTYPE html>
+<head>
+<title>Laptop Service</title>
+
+
+
+
+<link href="/static/css2/style.css" rel='stylesheet' type='text/css'/>
+	<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Roboto+Condensed:300,400" rel="stylesheet">
+	<link href="/static/css2/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Accessible Profile Widget Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+			<script src="/static/js2/jquery.min.js"></script>
+			<script>$(document).ready(function(c) {
+			$('.alert-close').on('click', function(c){
+				$('.main-agile').fadeOut('slow', function(c){
+					$('.main-agile').remove();
+				});
+			});	  
+		});
+		</script>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Colored Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link rel="stylesheet" href="/static/css3/bootstrap.css">
+<!-- //bootstrap-css -->
+<!-- Custom CSS -->
+<link href="/static/css3/style.css" rel='stylesheet' type='text/css' />
+<!-- font CSS -->
+<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+<!-- font-awesome icons -->
+<link rel="stylesheet" href="/static/css3/font.css" type="text/css"/>
+<link href="/static/css3/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<script src="/static/js3/jquery2.0.3.min.js"></script>
+<script src="/static/js3/modernizr.js"></script>
+<script src="/static/js3/jquery.cookie.js"></script>
+<script src="/static/js3/screenfull.js"></script>
+		<script>
+		$(function () {
+			$('#supported').text('Supported/allowed: ' + !!screenfull.enabled);
+
+			if (!screenfull.enabled) {
+				return false;
+			}
+
+			
+
+			$('#toggle').click(function () {
+				screenfull.toggle($('#container')[0]);
+			});	
+		});
+		</script>
+<!-- charts -->
+<script src="/static/js3/raphael-min.js"></script>
+<script src="/static/js3/morris.js"></script>
+<link rel="stylesheet" href="/static/css3/morris.css">
+<!-- //charts -->
+<!--skycons-icons-->
+<script src="/static/js3/skycons.js"></script>
+<!--//skycons-icons-->
+</head>
+<body class="dashboard-page">
+	<script>
+	        var theme = $.cookie('protonTheme') || 'default';
+	        $('body').removeClass (function (index, css) {
+	            return (css.match (/\btheme-\S+/g) || []).join(' ');
+	        });
+	        if (theme !== 'default') $('body').addClass(theme);
+        </script>
+	<nav class="main-menu">
+		<ul>
+
+
+            <li>
+				<a href="{% url 'index' %}">
+					<i class="fa fa-home nav_icon"></i>
+					<span class="nav-text">
+					HOME
+					</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{% url 'dashboard' %}">
+					<i class="fa fa-home nav_icon"></i>
+					<span class="nav-text">
+					Dashboard
+					</span>
+				</a>
+			</li>
+            {%  if user.is_superuser %}
+			
+			
+			
+			<li>
+				<a href="{% url 'admin:index' %}">
+					<i class="fa fa-user nav-icon"></i>
+					<span class="nav-text">
+						Admin
+					</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{% url 'make_invoice' %}">
+					<i class="fa fa-money nav-icon"></i>
+					<span class="nav-text">
+					Make Invoice
+					</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{% url 'recieved_booking' %}">
+					<i class="fa fa-get-pocket nav-icon"></i>
+					<span class="nav-text">
+					Received Item
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'add_category' %}">
+					<i class="fa fa-bars nav-icon"></i>
+					<span class="nav-text">
+					Add Products Category
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'category_list' %}">
+					<i class="fa fa-eye nav-icon"></i>
+					<span class="nav-text">
+					View Products Category
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'product_create' %}">
+					<i class="fa fa-plus nav-icon"></i>
+					<span class="nav-text">
+					Add Products
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'product_list1' %}">
+					<i class="fa fa-eye nav-icon"></i>
+					<span class="nav-text">
+					View Products
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'payment:allpayment' %}">
+					<i class="fa fa-paypal nav-icon" aria-hidden="true"></i>
+					<span class="nav-text">
+					View Payments
+					</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'all_complaint' %}">
+					<i class="fa fa-exclamation-circle nav-icon" aria-hidden="true"></i>
+					<span class="nav-text">
+					View Complaints
+					</span>
+				</a>
+			</li>
+            
+            <li>
+				<a href="{% url 'all_booking' %}">
+					<i class="fa fa-book nav-icon" aria-hidden="true"></i>
+					<span class="nav-text">
+					View Bookings
+					</span>
+				</a>
+			</li>
+
+            <li>
+				<a href="{% url 'add_rating' %}">
+					<i class="fa fa-star nav-icon" aria-hidden="true"></i>
+					<span class="nav-text">
+					View Ratings
+					</span>
+				</a>
+			</li>
+			{% else %}
+
+
+            <li>
+				<a href="{% url 'send_complaint' %}">
+					<i class="fa fa-exclamation nav-icon"></i>
+					<span class="nav-text">
+					Send Complaints
+					</span>
+				</a>
+			</li>
+            <li>
+				<a href="{% url 'my_complint' %}">
+					<i class="fa fa-exclamation nav-icon"></i>
+					<span class="nav-text">
+					View My Complaints
+					</span>
+				</a>
+			</li>
+            <li>
+				<a href="{% url 'add_rating' %}">
+					<i class="fa fa-star nav-icon"></i>
+					<span class="nav-text">
+					Add Rating
+					</span>
+				</a>
+			</li>
+            <li>
+				<a href="{% url 'product' %}">
+					<i class="fa fa-shopping-bag nav-icon"></i>
+					<span class="nav-text">
+					View Products
+					</span>
+				</a>
+			</li>
+            <li>
+				<a href="{% url 'book_service' %}">
+					<i class="fa fa-book nav-icon"></i>
+					<span class="nav-text">
+					Book service
+					</span>
+				</a>
+			</li>
+            <li>
+				<a href="{% url 'my_booking' %}">
+					<i class="fa fa-book nav-icon"></i>
+					<span class="nav-text">
+					View My Booking
+					</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{% url 'my_invoices' %}">
+					<i class="fa fa-money nav-icon"></i>
+					<span class="nav-text">
+					View My Invoice
+					</span>
+				</a>
+			</li>
+            <li>
+				<a href="{% url 'orders:neworder' %}">
+					<i class="fa fa-truck nav-icon"></i>
+					<span class="nav-text">
+					View My Order
+					</span>
+				</a>
+			</li>
+            <li>
+				<a href="{% url 'cart:cart_detail' %}">
+					<i class="fa fa-cart-plus nav-icon"></i>
+					<span class="nav-text">
+					View My Cart
+					</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="{% url 'payment:userpayment' %}">
+					<i class="fa fa-cc-visa nav-icon"></i>
+					<span class="nav-text">
+					View My Payments
+					</span>
+				</a>
+			</li>
+
+
+
+            {% endif %}
+
+		</ul>
+		<ul class="logout">
+			<li>
+			<a href="{% url 'user_logout' %}">
+			<i class="icon-off nav-icon"></i>
+			<span class="nav-text">
+			Logout
+			</span>
+			</a>
+			</li>
+		</ul>
+	</nav>
+	<section class="wrapper scrollable">
+		<nav class="user-menu">
+			<a href="javascript:;" class="main-menu-access">
+			<i class="icon-proton-logo"></i>
+			<i class="icon-reorder"></i>
+			</a>
+		</nav>
+		<section class="title-bar">
+			<div class="logo">
+				<h1><a href="{% url 'dashboard' %}"><img src="/static/images3/logo.png" alt="" />Laptop Service</a></h1>
+			</div>
+			
+			<div class="header-right">
+				<div class="profile_details_left">
+					<div class="header-right-left">
+						<!--notifications of menu start -->
+						
+					</div>	
+					<div class="profile_details">		
+						<ul>
+							<li class="dropdown profile_details_drop">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+									<div class="profile_img">	
+										<span class="prfil-img"><i class="fa fa-user" aria-hidden="true"></i></span> 
+										<div class="clearfix"></div>	
+									</div>	
+								</a>
+								<ul class="dropdown-menu drp-mnu">
+									
+									<li> <a href="{% url 'dashboard' %}"><i class="fa fa-user"></i> Profile</a> </li> 
+									<li> <a href="{% url 'user_logout' %}"><i class="fa fa-sign-out"></i> Logout</a> </li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</section>
+		<div class="main-grid">
+			
+			<div style="background-color: aquamarine;padding-left: 2em;padding-right: 2em;padding-top: 2em;padding-bottom: 2em;">
+               
+
+{% load static %}{% load crispy_forms_tags %} {% block content %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+<div class="row" style="padding-left: 2em;padding-top: 1em;padding-bottom: 1em;">
+    <div class="col-md-8">
+        <h4 class="mb-3">Shipping Address</h4>
+
+        <form name="form" action="{% url 'orders:order_save' %}" method="POST" class="needs-validation " novalidate>{% csrf_token %}
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">First name</label>
+                    <input type="text" style="color: sienna;" class="form-control" id="firstName " placeholder=" " value="{{ profile.user.first_name }} " required>
+                    <div class="invalid-feedback ">
+                        Valid first name is required.
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3 ">
+                    <label for="lastName ">Last name</label>
+                    <input type="text" style="color: sienna;" class="form-control" id="lastName " placeholder=" " value="{{profile.user.last_name}} " required>
+                    <div class="invalid-feedback ">
+                        Valid last name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 ">
+                <label for="username">Full name</label>
+                <div class="input-group ">
+
+                    <input type="text" style="color: sienna;" value="{{user.first_name}} {{user.last_name}}" class="form-control " id="username " placeholder="Username " required>
+                    <div class="invalid-feedback " style="width: 100%; ">
+                        Your full name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 ">
+                <label for="username">Phone</label>
+                <div class="input-group">
+
+                    <input type="text" value="{{user.register.phone}}" style="color: sienna;" class="form-control " id="username " placeholder="phone " required>
+                    <div class="invalid-feedback" style="width: 100%; ">
+                        Your phonenumber is required.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 ">
+                <label for="username">Username</label>
+                <div class="input-group ">
+                    <input type="text " value="{{profile.user.username}}" style="color: sienna;" class="form-control " id="username " placeholder="Username " required>
+                    <div class="invalid-feedback " style="width: 100%; ">
+                        Your username is required.
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 ">
+                <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                <input type="email" class="form-control"  style="color: sienna;"placeholder="you@example.com " value="{{profile.user.email}} ">
+                <div class="invalid-feedback ">
+                    Please enter a valid email address for shipping updates.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="address">Address</label>
+                <input type="text"  style="color: sienna;" name="address" class="form-control" placeholder="1234 Main St" value="" required>
+                <div class="invalid-feedback">
+                    Please enter your shipping address.
+                </div>
+            </div>
+            <div class="mb-3 ">
+                <label for="address2">Address2 <span class="text-muted ">(Optional)</span></label>
+                <input name="address_secound" style="color: sienna;" type="text " class="form-control" placeholder="Apartment or suite ">
+            </div>
+
+            <div class="row">
+                <div class="col-md-5 mb-3 ">
+                    <label for="country">Country</label>
+                    <input type="text" style="color: sienna;" name="country" class="form-control " id="zip" placeholder=" " required>
+                    <div class="invalid-feedback ">
+                        Please select a valid country.
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 ">
+                    <label for="state">State</label>
+                    <input type="text" name="state" class="form-control" id="zip"  style="color: sienna;" placeholder="" required>
+                    <div class="invalid-feedback ">
+                        Please provide a valid state.
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3 ">
+                    <label for="zip">Zip</label>
+                    <input type="text" style="color: sienna;" class="form-control " name="zip" id="zip " placeholder=" " required>
+                    <div class="invalid-feedback ">
+                        Zip code required.
+                    </div>
+                </div>
+
+            </div>
+
+
+            <hr class="mb-4 ">
+
+            <hr class="mb-4 ">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+        </form>
+    </div>
+    <div class="col-md-4 ">
+        <h4 class="d-flex justify-content-between align-items-center mb-3 ">
+            <span class="text-muted">Order summary</span>
+            <span class="badge badge-secondary badge-pill ">{{cart.items.count}}</span>
+        </h4>
+        <ul class="list-group mb-3 ">
+            {% for item in cart.items.all %} {% with product=item.product %}
+
+            <li class="list-group-item d-flex justify-content-between lh-condensed ">
+                <div>
+                    <h6 class="my-0" style="color: sienna;">{{product.name}}</h6>
+
+                </div>
+                <span class="text-muted ">{{ product.price }} X {{ item.quantity }} = {{  item.get_cost }}</span>
+            </li>
+
+
+            {% endwith %} {% endfor %}
+            <!-- <li class="list-group-item d-flex justify-content-between bg-light ">
+                <div class="text-success ">
+                    <h6 class="my-0 ">Shipping Charge</h6>
+                    <small></small>
+                </div>
+                <span class="text-success ">No Shipping charge</span>
+            </li> -->
+            <!-- <li class="list-group-item d-flex justify-content-between bg-light ">
+                <div class="text-success ">
+                    <h6 class="my-0 ">custom duty</h6>
+                    <small></small>
+                </div>
+                <span class="text-success ">$5</span>
+            </li> -->
+
+            <li class="list-group-item d-flex justify-content-between ">
+                <span>Total (INR)</span>
+                <strong>{{cart.get_total_cost}}</strong>
+            </li>
+        </ul>
+
+    </div>
+</div>
+{% endblock %}
+
+</div>
+			
+			
+			
+			
+			
+			
+</div>
+<!-- footer -->
+<div class="footer">
+    
+</div>
+<!-- //footer -->
+</section>
+<script src="/static/js3/bootstrap.js"></script>
+<script src="/static/js3/proton.js"></script>
+</body>
+</html>
